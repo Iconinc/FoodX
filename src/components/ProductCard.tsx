@@ -21,10 +21,13 @@ export default function ProductCard({ product }: ProductProps) {
                 height={320}
                 className={'left-0 top-0 h-full w-full object-cover relative z-10 duration-1000 group-hover:scale-[1.1]'}
             />
+            <div className={'absolute right-0 top-0 z-20 w-full flex flex-end items-center p-2 mt-1'}>
+                <button className={'text-xs px-4 py-4 bg-gradient-to-r from-slate-900 to-blue-900  text-slate-300 scale-75 font-bold rounded-[20px] uppercase'}>{product.category}</button>
+            </div>
             <div className={'w-full absolute z-20 left-0 bottom-0 p-1'}>
                 <div className={'bg-gradient-to-r from-slate-100/90 via-green-200/60 to-white/80 backdrop-blur-sm p-3 lg:p-4 rounded-[25px] flex-between !items-end'}>
                     <div className={'flex-start flex-col gap-1'}>
-                        <h1 className={'text-sm font-medium'}>{product.name}</h1>
+                        <h1 className={'text-sm font-normal'}>{product.name}</h1>
                         <p className={'uppercase text-slate-700 text-sm font-bold'}>
                             {product.price} <span className={'text-slate-800'}>rwf</span>
                         </p>
