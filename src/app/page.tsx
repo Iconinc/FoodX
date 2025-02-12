@@ -1,4 +1,5 @@
 import ProductCard from "@/components/ProductCard";
+import {products} from "@/libs/content";
 
 export default function Home() {
     return (
@@ -12,7 +13,7 @@ export default function Home() {
 
                     {/*Head*/}
                     <div className={'flex-start flex-col gap-4'}>
-                        <div className={'bg-white w-10 md:w-14 h-10 md:h-14 flex-center rounded-2xl border-2 border-slate-500'}>
+                        <div className={'bg-white w-10 md:w-14 h-10 md:h-14 flex-center rounded-full border-2 border-slate-500'}>
                             <h1 className={'text-xs text-slate-500/90 uppercase font-black scale-75 -rotate-45'}>Logo</h1>
                         </div>
                         <div className={'flex-start flex-col gap-1'}>
@@ -34,16 +35,11 @@ export default function Home() {
             </div>
 
             <div className={'w-full lg:absolute right-0  lg:w-[65%] px-2 lg:px-6 pb-6 rounded-[30px]  grid grid-cols-2 md:grid-cols-3 gap-2'}>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+                {products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
             </div>
+
         </section>
     );
 }
